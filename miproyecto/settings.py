@@ -163,9 +163,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# 'es-mx': español de México; el admin se traduce solo
+LANGUAGE_CODE = 'es-mx'
+# 'America/Hermosillo': hora de Sonora (UTC-7, sin horario de verano)
+TIME_ZONE = 'America/Hermosillo'
 
 USE_I18N = True
 
@@ -186,3 +187,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# LOGIN_URL: a dónde manda @login_required a quien quiere entrar sin haber iniciado sesión
+# '/admin/login/': por ahora usamos la pantalla de login del panel /admin; la Semana 6 la cambia por una propia
+LOGIN_URL = '/admin/login/'
